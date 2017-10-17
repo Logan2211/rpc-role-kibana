@@ -37,16 +37,6 @@
   tags:
     - kibana-install
 
-- name: Deploy Kibana service configuration file
-  template:
-    src: "kibana"
-    dest: "/etc/default/kibana"
-    owner: "root"
-    group: "root"
-  notify: Restart Kibana
-  tags:
-    - kibana-install
-
 - name: Restart Kibana before proceeding
   meta: flush_handlers
   tags:
